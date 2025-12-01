@@ -1,14 +1,70 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SENTINALX — Internal</title>
+
+    <!-- Link to the shared stylesheet -->
     <link rel="stylesheet" href="/src/styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tauri App</title>
-    <script type="module" src="/src/main.ts" defer></script>
+
+    <!-- Local script -->
+    <script src="script.js" defer></script>
   </head>
 
-  <body><h1>SENTINALX</h1>
-    
+  <body class="sx-body">
+
+    <div class="sx-panel" role="region" aria-labelledby="sx-panel-title">
+      <header class="sx-panel-header">
+        <h1 id="sx-panel-title" class="sx-panel-title">SENTINALX</h1>
+        <p class="sx-panel-sub">NETWORK SECURITY SCANNER</p>
+      </header>
+
+      <div class="sx-card sx-card-md">
+        <div class="sx-status">
+          <span class="sx-dot" aria-hidden="true"></span>
+          <span class="sx-status-text">System Ready</span>
+        </div>
+
+        <div class="sx-controls">
+          <button class="sx-btn sx-btn-muted" type="button" onclick="openLogs()">
+            Open Logs
+          </button>
+
+          <button class="sx-btn sx-btn-primary" type="button" onclick="deviceScan()">
+            Device Scan
+          </button>
+
+          <button class="sx-btn sx-btn-purple" type="button" onclick="portScan()">
+            Port Scan
+          </button>
+
+          <button class="sx-btn sx-btn-green" type="button" onclick="serviceVersionDetection()">
+            Service &amp; Version Detection
+          </button>
+
+          <div class="sx-divider" role="separator"></div>
+
+          <div class="sx-toggle-row">
+            <div class="sx-toggle-left">
+              <span class="sx-toggle-icon" aria-hidden="true">⛭</span>
+              <span class="sx-toggle-label">Background Logs</span>
+            </div>
+
+            <div class="sx-toggle-right">
+              <input id="sx-background-logs" class="sx-toggle-checkbox" type="checkbox" />
+              <label for="sx-background-logs" class="sx-toggle-switch" aria-hidden="true">
+                <span class="sx-toggle-knob"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="sx-footer">
+        Version 1.0.0 • Built with Tauri
+      </footer>
+    </div>
+
   </body>
 </html>
