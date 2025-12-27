@@ -8,22 +8,22 @@
   align-items: center;
   justify-content: center;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color: #dbe6f1;
-  background: radial-gradient(circle at 10% 20%, rgba(40,45,65,0.35), transparent),
-              linear-gradient(180deg, #0f1723, #0b0e16);
+  color: #fcfdfd;
+  background: radial-gradient(circle at 10% 20%, rgba(56, 60, 74, 0.35), transparent),
+              linear-gradient(180deg, #929293, #252833);
   -webkit-font-smoothing: antialiased;
 }
 
 /* -- Compact centered small card used on index.html -- */
 .sx-card {
   width: min(520px, 92vw);
-  background: rgba(255,255,255,0.02);
+  background: rgba(183, 180, 180, 0.62);
   padding: 48px 44px;
   border-radius: 18px;
   text-align: center;
-  box-shadow: 0 10px 40px rgba(2,6,12,0.65), 0 0 35px rgba(57,126,255,0.12) inset;
-  border: 1px solid rgba(255,255,255,0.03);
-  backdrop-filter: blur(6px);
+  /* box-shadow: 0 10px 40px rgba(2,6,12,0.65), 0 0 35px rgba(57,126,255,0.12) inset; */
+  border: 3px solid rgb(0, 0, 0);
+  /* backdrop-filter: blur(6px); */
 }
 
 /* -- Title styles -- */
@@ -31,9 +31,9 @@
 .sx-panel-title {
   margin: 0 0 8px 0;
   font-weight: 800;
-  font-size: 40px;
+  font-size: 50px;
   letter-spacing: 6px;
-  background: linear-gradient(90deg,#59e0ff,#2b8bff);
+  background: linear-gradient(90deg,#000101,#000000);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -43,14 +43,22 @@
 .sx-panel-sub {
   margin: 0 0 18px 0;
   color: #98a0b3;
-  font-size: 12px;
+  font-size: 20px;
   letter-spacing: 2px;
+}
+
+.sx-card:hover{
+  box-shadow: 0px 4px 10px rgb(168, 165, 165);
+  border: 4px solid #000000;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 }
 
 /* -- Buttons container on index.html -- */
 .sx-button-group {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 18px;
 }
 
@@ -58,15 +66,16 @@
 .sx-btn {
   border: none;
   cursor: pointer;
-  padding: 14px 18px;
+  padding: 20px 18px;
   border-radius: 10px;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 20px;
   transition: transform .2s ease, box-shadow .2s ease;
-  width: 100%;
+  width: 60%;
   color: #fff;
   display: inline-flex;
   align-items: center;
+  text-align: center;
   justify-content: center;
 }
 
@@ -75,13 +84,26 @@
 
 /* Button variants */
 .sx-btn-internal {
-  background: linear-gradient(90deg,#0288d1,#1e90ff);
+  background: linear-gradient(90deg,#21668b,#000020);
   box-shadow: 0 10px 25px rgba(20,140,255,0.18);
 }
 
+.sx-btn-internal:hover {
+  box-shadow: 0 14px 20px rgb(15, 15, 15);
+  border: 3px solid #ffffff;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
 .sx-btn-external {
-  background: linear-gradient(90deg,#9b5cff,#6d3bff);
+  background: linear-gradient(90deg,#844848,#190000);
   box-shadow: 0 10px 25px rgba(120,70,255,0.14);
+}
+
+.sx-btn-external:hover {
+  box-shadow: 0 14px 20px rgb(15, 15, 15);
+  border: 3px solid #ffffff;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 }
 
 .sx-btn-muted {
@@ -94,7 +116,12 @@
 .sx-btn-purple  { background: linear-gradient(90deg,#9b5cff,#6d3bff); }
 .sx-btn-green   { background: linear-gradient(90deg,#16c98a,#0aa36f); }
 
-.sx-btn:hover { transform: translateY(-3px); }
+.sx-btn:hover { 
+  transform: translateY(-3px);
+  border: 3px solid #ffffff;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
 
 /* === internal.html specific components === */
 
@@ -104,6 +131,7 @@
   flex-direction: column;
   gap: 18px;
   align-items: center;
+  text-align: center;
   padding: 36px 18px;
 }
 
@@ -115,7 +143,7 @@
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   padding: 26px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.03);
+  border: 1px solid rgba(123, 113, 113, 0.03);
   box-shadow: 0 8px 30px rgba(4,8,12,0.6), 0 0 28px rgba(80,120,255,0.06) inset;
 }
 
@@ -125,7 +153,12 @@
 .sx-status-text { color:#9fcdbf; font-weight:600; }
 
 /* controls stack */
-.sx-controls { display:flex; flex-direction:column; gap:12px; }
+.sx-controls { 
+  display:flex; 
+  flex-direction:column; 
+  gap:12px;
+  align-items: center;
+}
 
 /* divider */
 .sx-divider { height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.03),transparent); margin:12px 0;border-radius:2px; }
